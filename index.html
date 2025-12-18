@@ -1,1 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Loving Memory - Penninah Kanini Wambua</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
+    <style>
+        :root {
+            --primary-text: #4a4a4a;
+            --secondary-text: #757575;
+            --accent-gold: #c5a059;
+            --bg-cream: #f9f9f7;
+            --bg-white: #ffffff;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--primary-text);
+            background-color: var(--bg-cream);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 90vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.751), rgba(0, 0, 0, 0.932)), url('hmum.jpg'); /* Placeholder image of clouds/light */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-dates {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #e0e0e0;
+        }
+
+        .hero-quote {
+            margin-top: 2rem;
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Timeline / Life Story Styling */
+        .story-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-gold);
+            margin: 20px auto 0;
+        }
+
+        /* Vertical Line Layout */
+        .timeline-container {
+            border-left: 2px solid #e0e0e0;
+            padding-left: 40px;
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .timeline-item {
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -50px; /* Adjust based on padding-left of container + border width */
+            top: 0;
+            width: 18px;
+            height: 18px;
+            background-color: var(--accent-gold);
+            border-radius: 50%;
+            border: 4px solid var(--bg-cream);
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .card-custom {
+            border: none;
+            background-color: var(--bg-white);
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            padding: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Family Grid */
+        .family-list {
+            list-style: none;
+            padding: 0;
+        }
+        .family-list li {
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .candle-icon {
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        /* Animation */
+        .fade-in {
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .timeline-container { padding-left: 20px; border-left: none; margin-left: 0; }
+            .timeline-item::before { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">In Remembrance</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#biography">Biography</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#family">Family</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#career">Career</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tribute">Tribute</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-content fade-in container">
+            <div class="mb-4">
+                <div style="font-size: 3rem; color: #c5a059;">✝</div>
+            </div>
+            <h4>Celebrating the Life of</h4>
+            <h1>Penninah Kanini Wambua</h1>
+            <div class="hero-dates">
+                26th December 1971 &mdash; 6th December 2025
+            </div>
+            <p class="hero-quote">
+                "A mother holds her children's hands for a while, but their hearts forever."
+            </p>
+        </div>
+    </header>
+
+    <section id="biography" class="story-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    
+                    <div class="section-title">
+                        <h2>Her Life's Journey</h2>
+                    </div>
+
+                    <div class="timeline-container">
+                        
+                        <div class="timeline-item fade-in">
+                            <span class="timeline-date">The Beginning</span>
+                            <div class="card-custom">
+                                <h3>Childhood & Roots</h3>
+                                <p>
+                                    The late Penninah Kanini Wambua was born on <strong>26th December 1971</strong> at Kathemboni village, Wathini sub-location, Kasikeu location, Kilome constituency, Makueni County.
+                                </p>
+                                <p>
+                                    She was the beloved daughter to the Late Wilson Wambua Kwinga and Mary Wambua. Raised in a loving family, she absorbed the values of unity, respect, and hard work from a tender age.
+                                </p>
+                                <p class="text-muted">
+                                    Sister to: The Late William Kasungo, Daniel Nyamai, Alice Tila, Late Agnes Mueni, Patricia Mutave, Late Mutiso, Samuel Musyoki, Beth Mbeneka, and Albanus Muema.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <span class="timeline-date">Academic Pursuit</span>
+                            <div class="card-custom">
+                                <h3>Education</h3>
+                                <p>
+                                    Her academic journey began at Muua Primary School (1977–1985). She proceeded to Enguli ABC Secondary School for her higher education (1986–1990).
+                                </p>
+                                <p>
+                                    Driven by a passion for teaching, she joined Narok Teachers’ College (1996–1998), securing her P1 certificate. Committed to excellence, she later specialized in Early Childhood Development & Education (ECDE) at Oasis ECD Teachers College (2012–2014), obtaining her Diploma.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" id="family">
+                            <span class="timeline-date">Love & Legacy</span>
+                            <div class="card-custom">
+                                <h3>Marriage & Family Life</h3>
+                                <p>
+                                    In 1993, Penninah entered a holy union with <strong>Pius M. Katuusya</strong>. Their devoted marriage was blessed with three cherished children who became her greatest source of joy:
+                                </p>
+                                <ul class="family-list">
+                                    <li>Joshua Mulinge Pius</li>
+                                    <li>Damaris Kamene Pius</li>
+                                    <li>Denis Kalonzo Pius</li>
+                                </ul>
+                                <p class="mt-3">
+                                    <strong>A doting Grandmother to:</strong> Emmanuel Keiza, Adrian Joshua, Myles Fortune, and Pamela Joshua.
+                                </p>
+                                <p class="small text-muted mt-3">
+                                    She was a daughter-in-law to the Late Jonathan Ngumbi and Late Angela Kamene. A beloved sister-in-law to Nicholas, Onesmus, Benard, Late Matheka, Late Peter, Late Titus, Marieta, Catherine, Cecilia, Jeniffer, Late Stella, Late Caro, and Zipporah. She was an aunty to many.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" id="career">
+                            <span class="timeline-date">Service</span>
+                            <div class="card-custom">
+                                <h3>A Dedicated Career</h3>
+                                <p>
+                                    Her professional journey began in January 2003 as a Headteacher at Narok Church of Christ Junior Academy. Her public service career commenced in 2006 at Kiumoni Primary School. In 2022, she transferred to Marwa Primary School, where she served with dedication until her demise.
+                                </p>
+                                <p>
+                                    Beyond the classroom, she was a dedicated Sports Official for KPSSA championships for nearly a decade. She was honored by the Makueni County Government for her instrumental role in implementing the Adolescent Health and Nutrition Programme. She was also a professional farmer.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <span class="timeline-date">Spirituality</span>
+                            <div class="card-custom">
+                                <h3>Christian Life</h3>
+                                <p>
+                                    A woman of unwavering faith, Penninah was an active member of Kathemboni Baptist Church from childhood. Throughout her life, she fellowshipped at PAC Marwa, Worldwide Gospel Church Kyumbi Machakos, CCI Kalyambeu, and Winners Chapel Nairobi.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <span class="timeline-date">The Final Chapter</span>
+                            <div class="card-custom" style="border-left: 4px solid #333;">
+                                <h3>Sickness & Rest</h3>
+                                <p>
+                                    Penninah enjoyed good health until 20th October 2025. After complaining of severe illness, she was admitted to Kenyatta National Hospital. Despite specialized treatment and a brief discharge in November, her condition worsened.
+                                </p>
+                                <p>
+                                    She was diagnosed with a Malignant Neoplasm of the Gallbladder. On <strong>6th December 2025</strong>, whilst undergoing treatment, she rested in the arms of the Lord.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="tribute">
+        <div class="container">
+            <div class="candle-icon">🕯️</div>
+            <h3>Rest in Eternal Peace</h3>
+            <p class="lead">Penninah Kanini Wambua</p>
+            <p style="opacity: 0.7;">1971 &mdash; 2025</p>
+            <hr style="width: 50px; margin: 20px auto; background: #c5a059; height: 2px; border:none;">
+            <p class="small">
+                "I have fought the good fight, I have finished the race, I have kept the faith." <br>
+                — 2 Timothy 4:7
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
